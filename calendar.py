@@ -73,7 +73,7 @@ class TGECalendar(CalendarEntity):
     def fetch_cloud_data(self):
         """fetch today data"""
         now = datetime.now(ZoneInfo(self.hass.config.time_zone))
-        url = f"https://api.raporty.pse.pl/api/rce-pln?$filter=doba eq '{now.strftime('%Y-%m-%d')}'"
+        url = f"https://energy-instrat-api.azurewebsites.net/api/prices/energy_price_rdn_hourly?date_from={now.strftime('%d-%m-%Y')}T00:00:00Z&date_to={now.strftime('%d-%m-%Y')}T23:59:00Z"
         try:
             self.cloud_response = requests.get(url, timeout=10)
             self.cloud_response.encoding = 'ISO-8859-2'
@@ -84,7 +84,7 @@ class TGECalendar(CalendarEntity):
     def fetch_cloud_data_1(self):
         """fetch tomorrow data"""
         now = datetime.now(ZoneInfo(self.hass.config.time_zone)) + timedelta(days=1)
-        url = f"https://api.raporty.pse.pl/api/rce-pln?$filter=doba eq '{now.strftime('%Y-%m-%d')}'"
+         url = f"https://energy-instrat-api.azurewebsites.net/api/prices/energy_price_rdn_hourly?date_from={now.strftime('%d-%m-%Y')}T00:00:00Z&date_to={now.strftime('%d-%m-%Y')}T23:59:00Z"
         try:
             self.cloud_response = requests.get(url, timeout=10)
             self.cloud_response.encoding = 'ISO-8859-2'
@@ -112,7 +112,7 @@ class TGECalendar(CalendarEntity):
         curr_price = None
         start_time = None
         end_time = None
-        for i in json['value']:
+        for i in json:
             times =  i['udtczas_oreb'].split("-")
             ts = datetime.strptime(times[0].strip(),"%H:%M")
             ts = day.replace(hour=ts.hour, minute=ts.minute, second=0)
