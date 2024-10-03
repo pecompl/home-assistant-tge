@@ -1,12 +1,12 @@
 {
-  "domain": "rce",
-  "name": "RCE",
-  "codeowners": ["@pepellee"],
+  "domain": "rdn",
+  "name": "RDN",
+  "codeowners": ["@pecompl"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/PePeLLee/home-assistant-pse-calendar",
+  "documentation": "https://github.com/pecompl/home-assistant-tge",
   "iot_class": "local_polling",
   "requirements": [],
-  "issue_tracker": "https://github.com/PePeLLee/home-assistant-rce/issues",
+  "issue_tracker": "https://github.com/pecompl/home-assistant-tge/issues",
   "version": "2024.09.0"
 }
