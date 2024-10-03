@@ -3,7 +3,7 @@
 from homeassistant.core import HomeAssistant
 from homeassistant.config_entries import SOURCE_SYSTEM, ConfigEntry
 
-DOMAIN = "rce"
+DOMAIN = "rdn"
 async def async_setup(hass: HomeAssistant, config):
     """Wstepna konfiguracja domeny, jeśli to konieczne."""
     return True
