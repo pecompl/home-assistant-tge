@@ -1,10 +1,10 @@
 {
-    "title": "Kalendarz ograniczeń PSE",
+    "title": "Kalendarz ograniczeń TGE",
     "config": {
         "step": {
             "user": {
-                "description": "Czy chcesz dodać integrację ograniczeń PSE?",
-                "title": "Ograniczenia PSE"
+                "description": "Czy chcesz dodać integrację ograniczeń TGE?",
+                "title": "Ograniczenia TGE"
             }
         }
     }
