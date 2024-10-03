@@ -20,14 +20,14 @@ async def async_setup_entry(hass: HomeAssistant, config_entry, async_add_entitie
     """Konfiguracja za pomcą przepływu konfiguracji."""
 
     """This one is in use"""
-    async_add_entities([RCECalendar()])
+    async_add_entities([TGECalendar()])
 
 
-class RCECalendar(CalendarEntity):
+class TGECalendar(CalendarEntity):
     """Representation of a Sensor."""
 
     def __init__(self) -> None:
-        _LOGGER.info("RCE calendar")
+        _LOGGER.info("TGE calendar")
         super().__init__()
         self.ev = []
         self.cr_time = None
@@ -36,8 +36,8 @@ class RCECalendar(CalendarEntity):
         self.last_network_pull = datetime(
             year=2000, month=1, day=1, tzinfo=timezone.utc
         )
-        self._attr_unique_id = "rce_calendar"
-        self._attr_name = "RCE calendar"
+        self._attr_unique_id = "tge_calendar"
+        self._attr_name = "TGE calendar"
 
 
     async def async_get_events(
