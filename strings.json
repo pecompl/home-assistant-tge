@@ -1,10 +1,10 @@
 {
-    "title": "RCE ",
+    "title": "RDN ",
     "config": {
         "step": {
             "user": {
-                "description": "Do you want to add RCE integration",
-                "title": "RCE"
+                "description": "Do you want to add RDN integration",
+                "title": "RDN"
             }
         }
     }
